@@ -11,7 +11,7 @@ CFLAGS = -Wall -Wextra -Werror
 INCLUDES = .
 
 # Directory of the *.c mandatory functions
-SRCS = ft_printf.c
+SRCS = ft_printf.c ft_printchar.c ft_printstr.c ft_printpointer.c
 
 # Mandatory objects
 OBJS = $(SRCS:.c=.o)

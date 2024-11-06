@@ -22,6 +22,8 @@
 
 #include "libprintf.h"
 
+static int	ft_type(const char type, void *args);
+
 int	ft_printf(const char *input, ...)
 {
 	va_list			args;
