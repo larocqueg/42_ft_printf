@@ -1,21 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libftprintf.h                                      :+:      :+:    :+:   */
+/*   ft_printpointer.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gde-la-r <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/06 10:22:26 by gde-la-r          #+#    #+#             */
-/*   Updated: 2024/11/06 12:45:13 by gde-la-r         ###   ########.fr       */
+/*   Created: 2024/11/06 14:07:55 by gde-la-r          #+#    #+#             */
+/*   Updated: 2024/11/06 14:16:47 by gde-la-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFTPRINTF_H
-# define LIBFTPRINTF_H
+#include "libftprintf.h"
 
-# include <stdarg.h>
-# include "./libft/libft.h"
-
-int	ft_printf(const char *input, ...);
-
-#endif
+int	ft_printpointer(unsigned long str)
+{
+}
