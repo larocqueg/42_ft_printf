@@ -6,11 +6,11 @@
 /*   By: gde-la-r <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/06 14:07:55 by gde-la-r          #+#    #+#             */
-/*   Updated: 2024/11/06 14:16:47 by gde-la-r         ###   ########.fr       */
+/*   Updated: 2024/11/06 14:33:55 by gde-la-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include "libprintf.h"
 
 int	ft_printpointer(unsigned long str)
 {

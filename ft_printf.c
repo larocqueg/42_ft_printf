@@ -6,7 +6,7 @@
 /*   By: gde-la-r <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/06 10:25:09 by gde-la-r          #+#    #+#             */
-/*   Updated: 2024/11/06 12:46:22 by gde-la-r         ###   ########.fr       */
+/*   Updated: 2024/11/06 14:34:15 by gde-la-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 // %X Prints a number in hexadecimal (base 16) uppercase format.
 // %% Prints a percent sign.
 
-#include "libftprintf.h"
+#include "libprintf.h"
 
 int	ft_printf(const char *input, ...)
 {

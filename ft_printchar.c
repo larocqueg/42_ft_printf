@@ -6,11 +6,11 @@
 /*   By: gde-la-r <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/06 12:46:49 by gde-la-r          #+#    #+#             */
-/*   Updated: 2024/11/06 12:48:26 by gde-la-r         ###   ########.fr       */
+/*   Updated: 2024/11/06 14:34:05 by gde-la-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include "libprintf.h"
 
 int	ft_printchar(int c)
 {

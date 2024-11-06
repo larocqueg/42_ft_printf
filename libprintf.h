@@ -6,12 +6,12 @@
 /*   By: gde-la-r <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/06 10:22:26 by gde-la-r          #+#    #+#             */
-/*   Updated: 2024/11/06 12:45:13 by gde-la-r         ###   ########.fr       */
+/*   Updated: 2024/11/06 14:34:43 by gde-la-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFTPRINTF_H
-# define LIBFTPRINTF_H
+#ifndef LIBPRINTF_H
+# define LIBPRINTF_H
 
 # include <stdarg.h>
 # include "./libft/libft.h"
