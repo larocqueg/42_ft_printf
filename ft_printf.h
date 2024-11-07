@@ -14,7 +14,7 @@
 # define LIBPRINTF_H
 
 # include <stdarg.h>
-#include "/home/gde-la-r/Documents/42_Common-Core/42_Libft/libft.h"
+#include "./libft/libft.h"
 
 int	ft_printf(const char *input, ...);
 int	ft_printchar(int c);
