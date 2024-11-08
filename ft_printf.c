@@ -6,15 +6,17 @@
 /*   By: gde-la-r <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/08 14:21:48 by gde-la-r          #+#    #+#             */
-/*   Updated: 2024/11/08 17:29:15 by gde-la-r         ###   ########.fr       */
+/*   Updated: 2024/11/08 18:20:08 by gde-la-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdarg.h>
+#include <stdio.h>
 #include "ft_printf.h"
 #include "ft_strchr.c"
 #include "ft_putchar.c"
 #include "ft_putstr.c"
-#include <stdarg.h>
+#include "ft_putpointer.c"
 
 static int	ft_putnbr(int nb);
 static int	ft_type(const char *type, va_list argument);
@@ -91,7 +93,7 @@ static int	ft_type(const char *type, va_list argument)
 	else if (*type == 'd' || *type == 'i')
 		i += ft_putnbr(va_arg(argument, int));
 	else if (*type == 'p')
-		i += ft_printpointer(va_arg(argument, unsigned long long));
+		i += ft_putpointer(va_arg(argument, char *));
 	return (i);
 }
 
@@ -101,9 +103,18 @@ int	main(int ac, char **av)
 	int	pos = 2147483647;
 
 	ft_printf("Here is a char: %c\n", av[1][0]);
+	printf("printf(%c)\n", av[1][0]);
 	ft_printf("Here is a string: %s\n", av[1]);
+	printf("printf(%s)\n", av[1]);
 	ft_printf("Here is a negative number: %d\n", neg);
+	printf("printf(%d)\n", neg);
 	ft_printf("Here is a positive number: %d\n", pos);
+	printf("printf(%d)\n", pos);
+	ft_printf("Here is a negative number: %i\n", neg);
+	printf("printf(%i)\n", neg);
+	ft_printf("Here is a positive number: %i\n", pos);
+	printf("printf(%i)\n", pos);
 	ft_printf("Here is the pointer of av[1]: %p\n", av[1]);
+	printf("printf(%p)\n", av[1]);
 	return (0);
 }
