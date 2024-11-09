@@ -23,15 +23,17 @@ static void	ft_putnbr_base(unsigned long long n, char *base)
 
 static int	ft_strlen(char *str)
 {
-	int i = 0;
+	int	i;
+
+	i = 0;
 	while (str[i])
 		i++;
-	return i;
+	return (i);
 }
 
 int	ft_putpointer(void *ptr)
 {
-	unsigned long long address;
+	unsigned long long	address;
 
 	if (!ptr)
 	{

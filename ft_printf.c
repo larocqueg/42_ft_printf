@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdarg.h>
+#include "ft_printf.h"
 /*
 #include <stdio.h>
 #include "ft_printf.h"
@@ -18,6 +18,7 @@
 #include "ft_putchar.c"
 #include "ft_putstr.c"
 #include "ft_putpointer.c"
+
 int	ft_printf(const char *str, ...);
 static int	ft_putnbr(int nb);
 static int	ft_putnbr_neg(long n);
