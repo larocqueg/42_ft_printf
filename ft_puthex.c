@@ -1,30 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putpointer.c                                    :+:      :+:    :+:   */
+/*   ft_puthex.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gde-la-r <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/08 17:48:09 by gde-la-r          #+#    #+#             */
-/*   Updated: 2024/11/09 18:44:59 by gde-la-r         ###   ########.fr       */
+/*   Created: 2024/11/09 18:29:28 by gde-la-r          #+#    #+#             */
+/*   Updated: 2024/11/09 18:29:29 by gde-la-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_putpointer(void *ptr)
+int	ft_puthex(unsigned long n)
 {
-	unsigned long	address;
-	int				counter;
+	int		i;
+	char	*base;
 
-	if (!ptr)
-	{
-		ft_putstr("0x0");
-		return (3);
-	}
-	ft_putstr("0x");
-	address = (unsigned long)ptr;
-	counter = 0;
-	counter = ft_putnbr_base(address, "0123456789abcdef", counter);
-	return (counter + 2);
+	i = 0;
+	base = "0123456789abcdef";
+	i = ft_putnbr_base(n, base, i);
+	return (i);
 }
