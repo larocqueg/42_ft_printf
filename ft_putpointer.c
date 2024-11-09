@@ -14,7 +14,7 @@
 
 #include <unistd.h>
 
-static void	ft_putnbr_base(unsigned long long n, char *base)
+static void	ft_putnbr_base(unsigned long  n, char *base)
 {
 	if (n >= 16)
 		ft_putnbr_base(n / 16, base);
@@ -33,7 +33,7 @@ static int	ft_strlen(char *str)
 
 int	ft_putpointer(void *ptr)
 {
-	unsigned long long	address;
+	unsigned long	address;
 
 	if (!ptr)
 	{
@@ -41,7 +41,7 @@ int	ft_putpointer(void *ptr)
 		return (3);
 	}
 	ft_putstr("0x");
-	address = (unsigned long long)ptr;
+	address = (unsigned long)ptr;
 	ft_putnbr_base(address, "0123456789abcdef");
 	return (ft_strlen("0x") + 8);
 }
