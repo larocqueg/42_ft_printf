@@ -23,5 +23,6 @@ int		ft_putchar(int c);
 int		ft_putpointer(void *ptr);
 int		ft_putstr(char *str);
 char	*ft_strchr(const char *s, int c);
+int		ft_putunsigned(unsigned int nb);
 
 #endif

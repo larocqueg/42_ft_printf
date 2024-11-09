@@ -11,13 +11,14 @@
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-/*
+
 #include <stdio.h>
 #include "ft_printf.h"
 #include "ft_strchr.c"
 #include "ft_putchar.c"
 #include "ft_putstr.c"
 #include "ft_putpointer.c"
+#include "ft_putunsigned.c"
 
 int	ft_printf(const char *str, ...);
 static int	ft_putnbr(int nb);
@@ -45,10 +46,9 @@ int	main(int ac, char **av)
 	printf("printf(%i)\n", pos);
 	ft_printf("Here is the pointer of av[1]: %p\n", av[1]);
 	printf("printf(%p)\n", av[1]);
-	ft_printf("%%");
 	return (0);
 }
-*/
+
 int	ft_printf(const char *str, ...)
 {
 	va_list	arguments;
@@ -143,5 +143,7 @@ static int	ft_type(const char *type, va_list argument)
 		i += ft_putnbr(va_arg(argument, int));
 	else if (*type == 'p')
 		i += ft_putpointer(va_arg(argument, char *));
+	else if (*type == 'u')
+		i += ft_putunsigned(va_arg(argument, unsigned int));
 	return (i);
 }
