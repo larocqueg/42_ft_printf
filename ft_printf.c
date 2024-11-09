@@ -18,7 +18,7 @@
 #include "ft_putchar.c"
 #include "ft_putstr.c"
 #include "ft_putpointer.c"
-#include "ft_putunsigned.c"
+//#include "ft_putunsigned.c"
 
 int	ft_printf(const char *str, ...);
 static int	ft_putnbr(int nb);
@@ -143,7 +143,7 @@ static int	ft_type(const char *type, va_list argument)
 		i += ft_putnbr(va_arg(argument, int));
 	else if (*type == 'p')
 		i += ft_putpointer(va_arg(argument, char *));
-	else if (*type == 'u')
-		i += ft_putunsigned(va_arg(argument, unsigned int));
+	//else if (*type == 'u')
+		//i += ft_putunsigned(va_arg(argument, unsigned int));
 	return (i);
 }
