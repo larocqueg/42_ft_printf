@@ -6,7 +6,7 @@
 /*   By: gde-la-r <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/08 14:21:48 by gde-la-r          #+#    #+#             */
-/*   Updated: 2024/11/11 15:55:34 by gde-la-r         ###   ########.fr       */
+/*   Updated: 2024/11/11 17:04:02 by gde-la-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,10 +64,11 @@ int	ft_printf(const char *str, ...)
 
 static int	ft_putnbr_neg(long n)
 {
-	char	str[11];
+	char	*str;
 	int		i;
 	int		count;
 
+	str = (char *)malloc(sizeof(int) * 11);
 	i = 0;
 	count = 0;
 	write(1, "-", 1);
@@ -81,21 +82,21 @@ static int	ft_putnbr_neg(long n)
 			str[i++] = n % 10 + '0';
 			n /= 10;
 		}
+		count = i + 1;
 		while (--i >= 0)
 			write(1, &str[i], 1);
-		count = i + 1;
 	}
-	return (count + 1);
+	free(str);
+	return (count);
 }
 
-static int	ft_putnbr(long nb)
+static int	ft_putnbr(long n)
 {
-	char	str[11];
+	char	*str;
 	int		i;
 	int		count;
-	long	n;
 
-	n = nb;
+	str = (char *)malloc(sizeof(int) * 11);
 	count = 0;
 	if (n == 0)
 		return (ft_putchar('0'));
@@ -109,10 +110,11 @@ static int	ft_putnbr(long nb)
 			str[i++] = n % 10 + '0';
 			n /= 10;
 		}
+		count = i;
 		while (--i >= 0)
 			write(1, &str[i], 1);
-		count = i;
 	}
+	free(str);
 	return (count);
 }
 
