@@ -1,24 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_puthex.c                                        :+:      :+:    :+:   */
+/*   ft_putunsigned_nbr.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gde-la-r <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/09 18:29:28 by gde-la-r          #+#    #+#             */
-/*   Updated: 2024/11/09 18:29:29 by gde-la-r         ###   ########.fr       */
+/*   Created: 2024/11/11 14:50:28 by gde-la-r          #+#    #+#             */
+/*   Updated: 2024/11/11 14:51:19 by gde-la-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_puthex(unsigned long n)
+int	ft_putunsigned_nbr(unsigned long long n, char *base, int i)
 {
-	int		i;
-	char	*base;
-
-	i = 0;
-	base = "0123456789abcdef";
-	i = ft_putnbr_base(n, base, i);
+	if (n >= 10)
+		ft_putnbr_base(n / 10, base, i);
+	i += ft_putchar(base[n % 10]);
 	return (i);
 }
