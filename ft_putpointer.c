@@ -6,7 +6,7 @@
 /*   By: gde-la-r <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/08 17:48:09 by gde-la-r          #+#    #+#             */
-/*   Updated: 2024/11/11 15:30:35 by gde-la-r         ###   ########.fr       */
+/*   Updated: 2024/11/11 17:39:32 by gde-la-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_putpointer(void *ptr)
 {
-	unsigned long long	address;
+	unsigned long	address;
 	int					counter;
 
 	if (!ptr)
@@ -23,8 +23,8 @@ int	ft_putpointer(void *ptr)
 		return (3);
 	}
 	ft_putstr("0x");
-	address = (unsigned long long)ptr;
+	address = (unsigned long)ptr;
 	counter = 0;
-	counter = ft_putnbr_base(address, "0123456789abcdef", counter);
+	counter = ft_putnbr_base(address, "0123456789abcdef", counter, 16);
 	return (counter + 2);
 }

@@ -6,7 +6,7 @@
 /*   By: gde-la-r <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/08 15:30:59 by gde-la-r          #+#    #+#             */
-/*   Updated: 2024/11/11 15:29:13 by gde-la-r         ###   ########.fr       */
+/*   Updated: 2024/11/11 17:40:30 by gde-la-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 int		ft_printf(const char *str, ...);
 int		ft_putchar(int c);
 int		ft_puthex(unsigned long n);
-int		ft_putnbr_base(unsigned long long n, char *base, int i);
+int		ft_putnbr_base(unsigned long n, char *base, int i, unsigned int baselen);
 int		ft_putpointer(void *ptr);
 int		ft_putstr(char *str);
 char	*ft_strchr(const char *s, int c);

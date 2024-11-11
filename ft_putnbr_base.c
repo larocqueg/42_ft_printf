@@ -6,16 +6,16 @@
 /*   By: gde-la-r <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/09 18:29:14 by gde-la-r          #+#    #+#             */
-/*   Updated: 2024/11/11 16:46:12 by gde-la-r         ###   ########.fr       */
+/*   Updated: 2024/11/11 17:40:51 by gde-la-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_putnbr_base(unsigned long long n, char *base, int i)
+int	ft_putnbr_base(unsigned long n, char *base, int i, unsigned int baselen)
 {
-	if (n >= 16)
-		i = ft_putnbr_base(n / 16, base, i);
-	i += ft_putchar(base[n % 16]);
+	if (n >= baselen)
+		i = ft_putnbr_base(n / baselen, base, i, baselen);
+	i += ft_putchar(base[n % baselen]);
 	return (i);
 }

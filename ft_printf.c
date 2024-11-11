@@ -6,15 +6,14 @@
 /*   By: gde-la-r <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/08 14:21:48 by gde-la-r          #+#    #+#             */
-/*   Updated: 2024/11/11 17:04:02 by gde-la-r         ###   ########.fr       */
+/*   Updated: 2024/11/11 17:41:15 by gde-la-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 #include <stdio.h>
 //int			ft_printf(const char *str, ...);
-static int	ft_putnbr(long nb);
-static int	ft_putnbr_neg(long n);
+static int	ft_putnbr(int nb, int i);
 static int	ft_type(const char *type, va_list argument);
 /*
 int	main(int ac, char **av)
@@ -62,60 +61,21 @@ int	ft_printf(const char *str, ...)
 	return (i);
 }
 
-static int	ft_putnbr_neg(long n)
+static int	ft_putnbr(int nb, int i)
 {
-	char	*str;
-	int		i;
-	int		count;
+	long	n;
 
-	str = (char *)malloc(sizeof(int) * 11);
-	i = 0;
-	count = 0;
-	write(1, "-", 1);
-	n = -n;
-	if (n == 0)
-		return (ft_putchar('0'));
-	else
-	{
-		while (n > 0)
-		{
-			str[i++] = n % 10 + '0';
-			n /= 10;
-		}
-		count = i + 1;
-		while (--i >= 0)
-			write(1, &str[i], 1);
-	}
-	free(str);
-	return (count);
-}
-
-static int	ft_putnbr(long n)
-{
-	char	*str;
-	int		i;
-	int		count;
-
-	str = (char *)malloc(sizeof(int) * 11);
-	count = 0;
-	if (n == 0)
-		return (ft_putchar('0'));
+	n = nb;
 	if (n < 0)
-		return (ft_putnbr_neg(n));
-	else
 	{
-		i = 0;
-		while (n > 0)
-		{
-			str[i++] = n % 10 + '0';
-			n /= 10;
-		}
-		count = i;
-		while (--i >= 0)
-			write(1, &str[i], 1);
+		ft_putchar('-');
+		n = -n;
+		i++;
 	}
-	free(str);
-	return (count);
+	if (n > 9)
+		i = ft_putnbr(n / 10, i);
+	i += ft_putchar(n % 10 + '0');
+	return (i);
 }
 
 static int	ft_type(const char *type, va_list argument)
@@ -128,16 +88,16 @@ static int	ft_type(const char *type, va_list argument)
 	else if (*type == 's')
 		i += ft_putstr(va_arg(argument, char *));
 	else if (*type == 'd' || *type == 'i')
-		i += ft_putnbr(va_arg(argument, int));
+		i += ft_putnbr(va_arg(argument, int), 0);
 	else if (*type == 'u')
-		i += ft_putnbr(va_arg(argument, unsigned long));
+		i += ft_putnbr_base(va_arg(argument, unsigned int), "0123456789", 0, 10);
 	else if (*type == 'p')
 		i += ft_putpointer(va_arg(argument, char *));
 	else if (*type == 'x')
-		i += ft_putnbr_base(va_arg(argument, unsigned long),
-				"0123456789abcdef", i);
+		i += ft_putnbr_base(va_arg(argument, unsigned int),
+				"0123456789abcdef", 0, 16);
 	else if (*type == 'X')
-		i += ft_putnbr_base(va_arg(argument, unsigned long),
-				"0123456789ABCDEF", i);
+		i += ft_putnbr_base(va_arg(argument, unsigned int),
+				"0123456789ABCDEF", 0, 16);
 	return (i);
 }
