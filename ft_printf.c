@@ -6,7 +6,7 @@
 /*   By: gde-la-r <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/08 14:21:48 by gde-la-r          #+#    #+#             */
-/*   Updated: 2024/11/11 17:41:15 by gde-la-r         ###   ########.fr       */
+/*   Updated: 2024/11/11 17:48:17 by gde-la-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ int	ft_printf(const char *str, ...)
 		if (*str == '%')
 		{
 			str++;
-			if (ft_strchr("cspdiuxX", *str))
+			if (ft_strchar("cspdiuxX", *str))
 				i += ft_type(str, arguments);
 			else
 				i += ft_putchar(*str);
@@ -90,7 +90,8 @@ static int	ft_type(const char *type, va_list argument)
 	else if (*type == 'd' || *type == 'i')
 		i += ft_putnbr(va_arg(argument, int), 0);
 	else if (*type == 'u')
-		i += ft_putnbr_base(va_arg(argument, unsigned int), "0123456789", 0, 10);
+		i += ft_putnbr_base(va_arg(argument, unsigned int),
+				"0123456789", 0, 10);
 	else if (*type == 'p')
 		i += ft_putpointer(va_arg(argument, char *));
 	else if (*type == 'x')

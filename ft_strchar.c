@@ -1,19 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_strchar.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gde-la-r <gde-la-r@student.42porto.co      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/21 13:39:03 by gde-la-r          #+#    #+#             */
-/*   Updated: 2024/11/08 14:50:42 by gde-la-r         ###   ########.fr       */
+/*   Updated: 2024/11/11 17:45:41 by gde-la-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 //#include "libft.h"
 #include <unistd.h>
 
-char	*ft_strchr(const char *s, int c)
+char	*ft_strchar(const char *s, int c)
 {
 	int	i;
 

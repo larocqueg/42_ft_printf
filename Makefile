@@ -6,7 +6,7 @@
 #    By: gde-la-r <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/09 18:29:47 by gde-la-r          #+#    #+#              #
-#    Updated: 2024/11/11 15:52:56 by gde-la-r         ###   ########.fr        #
+#    Updated: 2024/11/11 17:46:26 by gde-la-r         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,7 @@ CFLAGS = -Wall -Wextra -Werror
 INCLUDES_DIR = .  # Points to the directory containing libft.h
 
 # Source files
-SRCS = ft_printf.c ft_putchar.c ft_putnbr_base.c ft_putpointer.c ft_putstr.c ft_strchr.c
+SRCS = ft_printf.c ft_putchar.c ft_putnbr_base.c ft_putpointer.c ft_putstr.c ft_strchar.c
 
 # Object files
 OBJS = $(SRCS:.c=.o)
