@@ -6,7 +6,7 @@
 /*   By: gde-la-r <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/08 15:21:18 by gde-la-r          #+#    #+#             */
-/*   Updated: 2024/11/11 15:11:36 by gde-la-r         ###   ########.fr       */
+/*   Updated: 2024/11/11 20:18:50 by gde-la-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	ft_putstr(char *str)
 
 	i = 0;
 	if (!str)
-		return (0);
+		return (ft_putstr("(null)"));
 	while (str[i])
 	{
 		write(1, &str[i], 1);
