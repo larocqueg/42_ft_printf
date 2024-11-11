@@ -6,17 +6,17 @@
 /*   By: gde-la-r <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/08 14:21:48 by gde-la-r          #+#    #+#             */
-/*   Updated: 2024/11/11 15:34:20 by gde-la-r         ###   ########.fr       */
+/*   Updated: 2024/11/11 15:53:40 by gde-la-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 #include <stdio.h>
-//int			ft_printf(const char *str, ...);
+int			ft_printf(const char *str, ...);
 static int	ft_putnbr(long nb);
 static int	ft_putnbr_neg(long n);
 static int	ft_type(const char *type, va_list argument);
-/*
+
 int	main(int ac, char **av)
 {
 	int	neg = -2147483648;
@@ -33,7 +33,7 @@ int	main(int ac, char **av)
 	ft_printf("x == %x\n", av[1]);
 	ft_printf("X == %X\n", av[1]);
 	return (0);
-}*/
+}
 
 int	ft_printf(const char *str, ...)
 {
